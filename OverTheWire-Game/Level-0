@@ -1,0 +1,16 @@
+## Level 0 ##
+
+$ We have to login the user using SSH with Username and password $
+
+"SSH Login" 
+
+1. Username: bandit0
+2. Password: bandit0
+3. Destination: bandit.labs.overthewire.org
+4. Port: 2220
+    |
+ssh bandit0@bandit.labs.overthewire.org -p 2220                 <Use it to login to the server>
+
+
+
+
