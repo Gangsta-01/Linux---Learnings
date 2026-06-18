@@ -1,10 +1,10 @@
 ### User Managment ###
 
 1. To add a User
-:/# useradd <User Name>
+:/# useradd <username>
 
 2. To add password for the user
-:/# passwd <User Name>
+:/# passwd <username>
 
 3. To check the user details 
 :/# vim /etc/passwd/                                <This will show the user file can use cat>
@@ -13,6 +13,32 @@
 :/# vim /etc/shadow/                                <This will show the encrypted password for user>
 
 5. To delete the user
-:/# userdel <User Name>
+:/# userdel <username>
 
 # NOTE: If the user forgots the password no one can recover it the password encryption is on way can't be decrypt
+
+6. To add a user with all info
+:/# adduser <username>                              <This will prompt to user information with pwd>
+
+7. To change password with specific time 
+:/# chage -M 90 username                             <This will reminds user to change password after 90 days>
+
+8. To lock the user 
+:/# passwd -l <username>                             <This will lock any hacky or suspicious user>
+
+9. To unlck user
+:/# passwd -u <username>
+
+## Working with Groups ##
+
+10. To add a group  
+:/# groupadd <groupname>
+
+11. To add a user to the group
+:/# usermod -aG <groupname> <username>
+
+12. Viewing Group Memberships
+:/# <group> <username>
+
+13. Changing Primary Group
+:/# usermod -g new_primary_group <username>
