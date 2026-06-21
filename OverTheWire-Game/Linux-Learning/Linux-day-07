@@ -1,0 +1,39 @@
+******************************************************
+     ## File Permissions Management in Linux ##
+******************************************************
+
+# Linux file permissions determine who can read, write, or execute files and directories. Each file and directory has three levels of permission:
+
+1. Owner (User): The creator of the file.
+2. Group: Users belonging to the assigned group.
+3. Others: All other users on the system.
+
+Permissions are represented as:
+
+1. Read (r or 4) – View file contents.
+2. Write (w or 2) – Modify file contents.
+3. Execute (x or 1) – Run scripts or programs.
+
+**********************************************************
+    ## Changing Permissions with chmod ##
+**********************************************************
+chmod u+x filename  # Add execute for user
+chmod g-w filename  # Remove write for group
+chmod o=r filename  # Set read-only for others
+chmod u=rwx,g=rx,o= filename  # Set full access for user, read/execute for group, and no access for others
+
+## Using Numeric (Octal) Mode ##
+
+chmod 755 filename  # User (rwx), Group (r-x), Others (r-x)
+chmod 644 filename  # User (rw-), Group (r--), Others (r--)
+chmod 700 filename  # User (rwx), No access for others
+
+# Changing Ownership with chown #
+
+chown newuser filename  # Change owner
+chown newuser:newgroup filename  # Change owner and group
+chown :newgroup filename  # Change only group
+
+## Default Permissions: umask ##
+
+umask 022  # Default: 755 for directories, 644 for files
